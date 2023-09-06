@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+    <h2>Enter a New flight</h2>
+    <form action="/flights" method="POST">
+        <label>airline:
+            <input type="text" name="airline">
+        </label><br>
+        <label>airport:
+            <select name="airport">
+                <option value="ATL">ATL</option>
+                <option value="ATLN">ATLN</option>
+                <option value="ATLS">ATLS</option>
+                <option value="ATLW">ATLW</option>
+            </select>
+        </label><br>
+        <label for="departs">Choose a departure time:</label>
+        <input type="datetime-local" id="departs" name="separts" value="2018-06-12T19:30" min="2018-06-07T00:00" max="2018-06-14T00:00" />
+        <label> flightNo:
+            <input type="text" name=" flightNo">
+        </label><br>
+        <button type="submit">Add Flight</button>
+    </form>
+    <p>
+        <%= errorMsg %>
+    </p>
+
+    <%- include('../partials/footer') %>
