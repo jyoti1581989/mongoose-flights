@@ -7,18 +7,21 @@
         </label><br>
         <label>airport:
             <select name="airport">
+                <option value="AUS">AUS</option>
+                <option value="DEF">DEF</option>
+                <option value="DEN">DEN</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
                 <option value="ATL">ATL</option>
-                <option value="ATLN">ATLN</option>
-                <option value="ATLS">ATLS</option>
-                <option value="ATLW">ATLW</option>
             </select>
         </label><br>
-        <label for="departs">Choose a departure time:</label>
-        <input type="datetime-local" id="departs" name="separts" value="2018-06-12T19:30" min="2018-06-07T00:00" max="2018-06-14T00:00" />
         <label> flightNo:
-            <input type="text" name=" flightNo">
+            <input type="number" name="flightNo">
         </label><br>
         <button type="submit">Add Flight</button>
+        <label for="departs">Choose a departure time:</label>
+        <input type="datetime-local" id="departs" name="departs" value="2018-06-12T19:30" min="2018-06-07T00:00" max="3018-06-14T00:00" />
+
     </form>
     <p>
         <%= errorMsg %>
