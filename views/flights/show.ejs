@@ -17,8 +17,28 @@
         <div>
             <%= flight.departs %>
         </div>
+        <!-- start cast list -->
+        <div>Tickets:</div>
+        <ul>
+            <%tickets.forEach(t=> t.flight && console.log(t.flight._id))%>
+                <%-tickets.filter(t=> t.flight && t.flight._id.equals(flight._id)).map(t=>
+                    `<li>${t.seat} <small>${t.price}</small></li>`
+                    ).join('') %>
+        </ul>
+
 
     </section>
+
+    <!-- add to information form below this comment -->
+    <form id="add-per-to-information" action="/flights/<%= flight._id %>/tickets" method="POST">
+        <select name="ticketId">
+            <!-- Emit an option for each performer -->
+            <%- tickets.map(t=>
+                `<option value="${t._id}">${t.seat}</option>`
+                ).join('') %>
+        </select>
+        <button type="submit">Add to Information</button>
+    </form>
 
     <br><br>
     <h2>Destinations</h2>
